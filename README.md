@@ -34,3 +34,6 @@ cd react_native_fixer
 go install ./cmd/goreactnative
 
 
+## Installation
+
+### 1. From Source
