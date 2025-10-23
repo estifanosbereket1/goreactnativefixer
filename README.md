@@ -8,8 +8,8 @@
 
 - Automatically detects React Native projects (`app.json` present).  
 - Runs `npx expo prebuild --platform android` to generate native Android files.  
-- Automatically overwrites the `android/gradle.properties` file with a standard template.  
-- Optionally updates Java and Javac alternatives using `sudo` if needed.  
+- Runs `sudo update-alternatives --config java` and `sudo update-alternatives --config javac` to select correct java versions.  
+- Automatically overwrites the `android/gradle.properties` file with a standard template.   
 - Portable: template files are embedded into the binary using Go `embed`, so no external dependencies.  
 
 ---
@@ -32,8 +32,11 @@
 git clone https://github.com/yourusername/react_native_fixer.git
 cd react_native_fixer
 go install ./cmd/goreactnative
+```
 
+## Usage
 
-## Installation
-
-### 1. From Source
+```bash
+cd /your/react-native/project
+goreactnative fix
+```
