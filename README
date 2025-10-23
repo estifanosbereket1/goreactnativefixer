@@ -1,0 +1,36 @@
+# React Native Fixer CLI
+
+`goreactnative` is a fast, simple, and portable CLI tool written in Go to automate common setup and fixes for React Native projects. It prebuilds Android native folders and replaces the `gradle.properties` file with a predefined template to ensure consistent project configuration.  
+
+---
+
+## Features
+
+- Automatically detects React Native projects (`app.json` present).  
+- Runs `npx expo prebuild --platform android` to generate native Android files.  
+- Automatically overwrites the `android/gradle.properties` file with a standard template.  
+- Optionally updates Java and Javac alternatives using `sudo` if needed.  
+- Portable: template files are embedded into the binary using Go `embed`, so no external dependencies.  
+
+---
+
+## Requirements
+
+- [Go 1.20+](https://go.dev/dl/) (for building from source).  
+- Node.js & npm/yarn/pnpm (for running Expo commands).  
+- Expo CLI installed globally (`npm install -g expo-cli`).  
+- React Native project with `app.json`.  
+- `sudo` privileges (only if updating Java alternatives).  
+
+---
+
+## Installation
+
+### 1. From Source
+
+```bash
+git clone https://github.com/yourusername/react_native_fixer.git
+cd react_native_fixer
+go install ./cmd/goreactnative
+
+
