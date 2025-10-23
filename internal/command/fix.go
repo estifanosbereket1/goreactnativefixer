@@ -140,5 +140,4 @@ var pwd string
 
 func init() {
 	rootCmd.AddCommand(fixCmd)
-	fixCmd.Flags().StringVarP(&pwd, "pwd", "p", "", "password")
 }
